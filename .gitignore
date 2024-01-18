@@ -1,0 +1,34 @@
+# Nix
+*.drv
+*.drv.old
+*.log
+*.gc
+*.scm
+*.drv
+*.drv.old
+*.drv-sh
+*.drv-sh.old
+result*
+
+# Temporary files
+*~
+
+# Emacs temporary files
+\#*\#
+.\#*
+
+# Vim temporary files
+.swp
+*.swo
+*.swn
+
+# Build artifacts
+/nix-*
+/*.tar.gz
+/*.tar.xz
+/*.zip
+/*.tar.bz2
+
+# Other
+.DS_Store
+Thumbs.db
