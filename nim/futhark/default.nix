@@ -8,7 +8,7 @@
 buildNimPackage (finalAttrs: {
   pname = "futhark";
   version = "0.12.0";
-  nimBinOnly = true;
+  nimBinOnly = false;
 
   src = fetchFromGitHub {
     owner = "PMunch";
@@ -17,7 +17,7 @@ buildNimPackage (finalAttrs: {
     sha256 = "sha256-CfnnFwnnr5uvqr4H3t5ZN/kHor1ngvL9OhAQ3fD6xik=";
   };
 
-  buildInputs = with packages;
+  propagatedBuildInputs = with packages;
     [
       libclang
       nimbleutils
@@ -27,7 +27,10 @@ buildNimPackage (finalAttrs: {
     ++ (with pkgs.nimPackages; [
       ])
     ++ (with pkgs; [
+      gnumake
+      clang
       libclang
+      cmake
     ]);
 
   doCheck = false; # Tests faile trying to find opir
